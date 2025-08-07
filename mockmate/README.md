@@ -1,12 +1,39 @@
-# React + Vite
+# MockMate — AI Interview Coach
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**MockMate** is an AI-powered interview preparation tool designed to help users practice and improve their interview skills through realistic simulations. It supports both text and voice inputs, analyzes responses, provides actionable feedback, and allows session export.
 
-Currently, two official plugins are available:
+##  Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dynamic interview simulation**: Presents a series of commonly asked job interview questions.
+- **Dual input modes**:
+  - **Voice**: Record responses and automatically transcribe using OpenAI’s Whisper API.
+  - **Text**: Type answers directly.
+- **AI-powered analysis**:
+  - Evaluates responses on clarity, confidence, structure, and tone.
+  - Generates a composite score (0–10).
+  - Offers 2–3 personalized improvement tips.
+- **Session tracking**:
+  - View previous responses and performance history.
+  - Export session report as a downloadable file (e.g., PDF or text).
 
-## Expanding the ESLint configuration
+##  Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**:  React + Tailwind CSS
+- **UI Icons**: lucide-react (e.g., Play, Mic, Clock)
+- **Voice Handling**: Navigator API + MediaRecorder
+- **AI & APIs**:
+  - OpenAI Whisper (speech-to-text)
+  - OpenAI GPT-3.5/Turbo or GPT-4 (response evaluation)
+- **Exporting Reports**: Client-side generation of text/PDF downloads
+
+##  Getting Started
+
+### Prerequisites
+- Node.js (v18+ recommended)
+- OpenAI API key (with access to Whisper and GPT models)
+
+### Installation
+```bash
+git clone https://github.com/Alfaz-17/mockmate.git
+cd mockmate
+npm install
