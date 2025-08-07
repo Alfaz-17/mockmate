@@ -1,4 +1,3 @@
-import React, { useState, useEffect, useRef } from "react";
 import {
   Play,
   Pause,
@@ -12,7 +11,7 @@ import {
   MessageSquare,
   Volume2,
 } from "lucide-react";
-
+import { useEffect, useRef, useState } from "react";
 const INTERVIEW_QUESTIONS = [
   "Tell me about yourself.",
   "Why are you interested in this position?",
@@ -56,6 +55,30 @@ function App() {
     }
     return () => clearInterval(interval);
   }, [isActive, timeLeft]);
+
+const transcribeAudio = async (blob) => {
+  const formData = new FormData();
+  formData.append("file", blob, "audio.wav");
+  formData.append("model", "whisper-1");
+const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+  try {
+    const response = await fetch("https://api.openai.com/v1/audio/transcriptions", {
+      method: "POST",
+      headers: {
+  Authorization: `Bearer ${apiKey}`,      },
+      body: formData,
+    });
+
+    const data = await response.json();
+    return data.text; // transcribed text
+  } catch (err) {
+    console.error("Transcription error:", err);
+    return "";
+  }
+};
+
+
+
 
   // Voice recording setup
   useEffect(() => {
