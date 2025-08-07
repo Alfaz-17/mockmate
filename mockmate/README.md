@@ -1,5 +1,16 @@
 # MockMate — AI Interview Coach
 
+
+# Team Name: Team Falcon
+
+# Project Name: Mockmate - ai interview coach for students
+
+# Problem Statment: to make mock interview digitalized
+
+# How it works: interview, practice, feedback
+
+# team members: Darshan Vejani, Vaibhav Vora, Alfaz Bilakhiya, Arpit Savaliya
+
 **MockMate** is an AI-powered interview preparation tool designed to help users practice and improve their interview skills through realistic simulations. It supports both text and voice inputs, analyzes responses, provides actionable feedback, and allows session export.
 
 ##  Features
